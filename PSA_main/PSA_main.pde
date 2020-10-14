@@ -8,3 +8,7 @@ October 2020
 float Test;
 
 Test = 15.145;
+
+float Test2;
+
+Test2 = 27.239;
