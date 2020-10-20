@@ -12,7 +12,6 @@ class Land {
     initYPositionFixed = height/2;
   }
   
-  
   void load() {
     land = loadShape("land.svg");
   }
