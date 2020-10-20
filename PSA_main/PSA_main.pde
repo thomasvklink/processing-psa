@@ -17,6 +17,7 @@ void setup() {
   ellipseMode(CENTER);
   rectMode(CENTER);
   sky = new Sky(width/2, height/2);
+  sky.display();
   trees = new Trees(width/2, height/2);
   trees.load();
   water = new Water(width/2, height/2);
@@ -27,11 +28,9 @@ void setup() {
 }
 
 void draw() {
-  sky.display();
   trees.display();
   water.display();
   land.display();
   cloud.display();
   cloud.update();
-  
 }
