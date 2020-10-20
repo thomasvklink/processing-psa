@@ -29,8 +29,8 @@ void setup() {
 
 void draw() {
   trees.display();
-  water.display();
-  land.display();
+  water.display();  
   cloud.display();
   cloud.update();
+  land.display();
 }
