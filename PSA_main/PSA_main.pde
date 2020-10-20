@@ -8,7 +8,7 @@
 Sky sky;
 Trees trees;
 Water water;
-Flow[] streams = new Flow[10];
+Flow[] streams = new Flow[20];
 Land land;
 Clouds cloud;
 
@@ -24,7 +24,7 @@ void setup() {
   water = new Water(width/2, height/2);
   water.load();
   for (int i = 0; i < streams.length; i ++ ) {
-     streams[i] = new Flow(random(0, width),random(height/2, height-height/4),random(10,30), random(10,50));
+     streams[i] = new Flow(random(0, width),random(height/1.7, height-height/4),random(30,100), random(10,20));
    }
   land = new Land(width/2, height/2);
   land.load();
