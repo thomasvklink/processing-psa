@@ -19,7 +19,7 @@ class Water {
   void display() {
     noStroke();
     fill(3,151,157);
-    rect(0, yPositionFixed+100, width, height/2);
+    rect(xPositionFixed, yPositionFixed+360, width, height/2);
     shape(reflection, xPositionFixed, yPositionFixed, width, height);
   }
 }
