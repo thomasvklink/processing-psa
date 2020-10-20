@@ -1,5 +1,7 @@
 class Land {
   
+  PShape land;
+  
   float xPositionFixed;
   float yPositionFixed;
 
@@ -11,7 +13,11 @@ class Land {
   }
   
   
+  void load() {
+    land = loadShape("land.svg");
+  }
+  
   void display() {
-    
+    shape(land, xPositionFixed, yPositionFixed, width, height);
   }
 }
