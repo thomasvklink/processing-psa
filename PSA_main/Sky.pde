@@ -22,9 +22,8 @@ class Sky {
         line(0, i, width, i);
       }
     }
-    cloud.display();
   }
   void update() {
-  cloud.update();
+
   }
 }

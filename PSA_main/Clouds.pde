@@ -1,7 +1,8 @@
 class Clouds {
-float cloudX;
-float cloudY;
-float speedX;
+  
+  float cloudX;
+  float cloudY;
+  float speedX;
 
   Clouds(float initXPositionFixed, float initYPositionFixed) {
     cloudX =  initXPositionFixed;
@@ -13,8 +14,6 @@ float speedX;
   
   void display()  {
    noStroke();
-   ellipseMode(CENTER);
-   rectMode(CENTER);
    fill(255,255,255);
    
    //cloud
@@ -30,5 +29,6 @@ float speedX;
   
   void update(){
    cloudX = cloudX + speedX; 
+   println(cloudX);
   }
 }
