@@ -7,9 +7,8 @@
 
 Sky sky;
 
-sky = new Sky(width/2, height/2);
-
 void setup() {
   size(displayWidth, displayHeight);
+  sky = new Sky(width/2, height/2);
   sky.display();
 }
