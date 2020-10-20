@@ -1,14 +1,15 @@
 /*  
-Processing Final Project
-P4WCI 2020
-Tristan van Marle, Thomas van Klink
-October 2020
-*/
+ Processing Final Project
+ P4WCI 2020
+ Tristan van Marle, Thomas van Klink
+ October 2020
+ */
 
-float Test;
+Sky sky;
 
-Test = 15.145;
+sky = new Sky(width/2, height/2);
 
-float Test2;
-
-Test2 = 27.239;
+void setup() {
+  size(displayWidth, displayHeight);
+  sky.display();
+}
