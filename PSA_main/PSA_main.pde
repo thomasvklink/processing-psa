@@ -24,3 +24,7 @@ void draw() {
   trees.display();
   water.display();
 }
+
+void draw(){
+ sky.update(); 
+}
