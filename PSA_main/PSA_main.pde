@@ -8,34 +8,35 @@
 Sky sky;
 Trees trees;
 Water water;
-Flow[] streams = new Flow[10];
+Flow[] streams = new Flow[20];
 Land land;
 Clouds cloud;
 
 void setup() {
-  size(displayWidth, displayHeight);
+  fullScreen();
   shapeMode(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
   sky = new Sky(width/2, height/2);
-  sky.display();
   trees = new Trees(width/2, height/2);
   trees.load();
   water = new Water(width/2, height/2);
   water.load();
   for (int i = 0; i < streams.length; i ++ ) {
-     streams[i] = new Flow(random(0, width),random(height/2, height-height/4),random(10,30), random(10,50));
+     streams[i] = new Flow(random(0, width),random(height/2+100, height-height/4),random(20,80), random(5,10), random(0.1,0.4));
    }
   land = new Land(width/2, height/2);
   land.load();
-  cloud = new Clouds(width/2,height/2);
+  cloud = new Clouds(random(0,width),height/2);
 }
 
 void draw() {
+  sky.display();
   trees.display();
   water.display(); 
   for (int i = 0; i < streams.length; i++) { 
      streams[i].display();
+     streams[i].update();
     }
   cloud.display();
   cloud.update();
