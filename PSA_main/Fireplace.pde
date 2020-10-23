@@ -3,7 +3,7 @@ class Fireplace {
   
   PShape fireplace;
   PShape logs;
-  Fire[] flames = new Fire[5];
+  Fire[] flames = new Fire[60];
 
   float xPosition;
   float yPosition;
@@ -19,7 +19,7 @@ class Fireplace {
     fireplace = loadShape("fireplace.svg");
     logs = loadShape("logs.svg");
     for (int i = 0; i < flames.length; i ++ ) {
-    flames[i] = new Fire(xPosition, yPosition, random(-0.3,0.3),random(1,3));
+    flames[i] = new Fire(random(xPosition-40,xPosition+40), yPosition-20, random(1,3), random(1,2.5));
    }
   }
   
