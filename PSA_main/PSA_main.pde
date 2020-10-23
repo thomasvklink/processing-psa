@@ -23,11 +23,7 @@ void setup() {
   water = new Water(width/2, height/2);
   water.load();
   for (int i = 0; i < streams.length; i ++ ) {
-<<<<<<< HEAD
-     streams[i] = new Flow(random(0, width),random(height/1.7, height-height/4),random(30,100), random(10,20));
-=======
      streams[i] = new Flow(random(0, width),random(height/2+100, height-height/4),random(20,80), random(5,10), random(0.1,0.4));
->>>>>>> dev
    }
   land = new Land(width/2, height/2);
   land.load();
