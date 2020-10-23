@@ -10,7 +10,6 @@ Trees trees;
 Water water;
 Flow[] streams = new Flow[20];
 Land land;
-Clouds cloud;
 
 void setup() {
   fullScreen();
@@ -23,11 +22,10 @@ void setup() {
   water = new Water(width/2, height/2);
   water.load();
   for (int i = 0; i < streams.length; i ++ ) {
-     streams[i] = new Flow(random(0, width),random(height/2+100, height-height/4),random(20,80), random(5,10), random(0.1,0.4));
-   }
+    streams[i] = new Flow(random(0, width), random(height/2+100, height-height/4), random(20, 80), random(5, 10), random(0.1, 0.4));
+  }
   land = new Land(width/2, height/2);
   land.load();
-  cloud = new Clouds(random(0,width),height/2);
 }
 
 void draw() {
@@ -35,10 +33,8 @@ void draw() {
   trees.display();
   water.display(); 
   for (int i = 0; i < streams.length; i++) { 
-     streams[i].display();
-     streams[i].update();
-    }
-  cloud.display();
-  cloud.update();
+    streams[i].display();
+    streams[i].update();
+  }
   land.display();
 }
