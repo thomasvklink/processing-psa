@@ -13,8 +13,11 @@ Land land;
 Bucket bucket;
 Fireplace fireplace;
 Clouds cloud;
+Shovel shovel;
 
 boolean isBurning;
+boolean overbucket;
+boolean overshovel;
 
 
 void setup() {
@@ -23,6 +26,7 @@ void setup() {
   shapeMode(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
+
   //Creating objects
   sky = new Sky(width/2, height/2);
   trees = new Trees(width/2, height/2);
@@ -32,13 +36,16 @@ void setup() {
   }
   land = new Land(width/2, height/2);
   bucket = new Bucket(width/2-700, height/2+400);
+  shovel = new Shovel((width/2-370), (height/2+100));
   fireplace = new Fireplace(width/2, height/2+300);
-  cloud = new Clouds(random(0,width),height/2);
+  cloud = new Clouds(random(0, width), height/2);
+
   //Loading images
   trees.load();
   water.load();
   land.load();
   fireplace.load();
+
   //Set booleans for logic
   isBurning=true;
 }
@@ -53,9 +60,15 @@ void draw() {
   }
   land.display();
   fireplace.display();
+  shovel.display();
   bucket.display();
 }
 
 void mouseDragged() {
-  bucket.move(mouseX, mouseY);
+  if (overbucket) {
+    bucket.drag(mouseX, mouseY);
+  }
+  if (!overbucket && overshovel) {
+    shovel.drag(mouseX, mouseY);
+  }
 }
