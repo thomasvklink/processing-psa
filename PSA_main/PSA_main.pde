@@ -13,7 +13,8 @@ Land land;
 Bucket bucket;
 Fireplace fireplace;
 Clouds cloud;
-
+boolean bucketfill;
+boolean drown;
 
 void setup() {
   fullScreen();
@@ -31,9 +32,9 @@ void setup() {
   land = new Land(width/2, height/2);
   land.load();
   bucket = new Bucket(width/2-700, height/2+400);
-  fireplace = new Fireplace(width/2, height/2+300);
+  fireplace = new Fireplace(width/2, height/2+350);
   fireplace.load();
-  cloud = new Clouds(random(0,width),height/2);
+  cloud = new Clouds(random(0, width), height/2);
 }
 
 void draw() {
@@ -45,8 +46,8 @@ void draw() {
     streams[i].update();
   }
   land.display();
-  bucket.display();
   fireplace.display();
+  bucket.display();
 }
 
 void mouseDragged() {
