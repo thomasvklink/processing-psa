@@ -12,14 +12,17 @@ class Bucket {
   }
 
   void display() {
+    fill(210,221,224);
+    rect(bucketX, bucketY, 45, 45, 15);
+    rect(bucketX, bucketY-10, 45, 45, 20);
+    rect(bucketX, bucketY-15, 50, 50, 20);
+    rect(bucketX, bucketY-15, 50, 50, 25);
     if (bucketfill) {
       fill(28, 163, 236);
     } else {
-      fill(GRAY);
+      fill(154,154,154);
     }
-    rect(bucketX, bucketY, 40, 40, 10);
-    rect(bucketX, bucketY-10, 45, 45, 20);
-    rect(bucketX, bucketY-15, 50, 50, 30);
+    ellipse(bucketX, bucketY-20, 40, 25);
   }
 
   void movebucket(float initXPositionFixed, float initYPositionFixed) {
