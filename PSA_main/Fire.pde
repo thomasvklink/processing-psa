@@ -31,6 +31,10 @@ class Fire {
      a = 255;
    }
    
+   if (!isBurning){
+     a = a-10;
+   }
+   
   }
 
 }

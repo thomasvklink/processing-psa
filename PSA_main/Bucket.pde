@@ -19,7 +19,7 @@ class Bucket {
     rect(bucketX, bucketY, 50, 50, 100);
   }
 
-  void movebucket(float initXPositionFixed, float initYPositionFixed) {
+  void move(float initXPositionFixed, float initYPositionFixed) {
     bucketX = initXPositionFixed;
     bucketY = initYPositionFixed;
     if ((mouseY >= height/2+100) && (mouseY<=height/2+300)) {

@@ -1,15 +1,13 @@
 class Fireplace {
   
-  
   PShape fireplace;
   PShape logs;
   Fire[] flames = new Fire[60];
 
   float xPosition;
   float yPosition;
+  float timer;
   
-  
-
   Fireplace(float initXPosition, float initYPosition) {
     xPosition = initXPosition;
     yPosition = initYPosition;
@@ -28,10 +26,18 @@ class Fireplace {
    ellipse(xPosition, yPosition, 300, 100);
    shape(fireplace, xPosition, yPosition, width, height);
    shape(logs, xPosition, yPosition-50, width, height);
-   for (int i = 0; i < flames.length; i ++ ) {
-    flames[i].display();
-    flames[i].update();
+   
+   if (!isBurning){
+     timer++;
    }
+   
+   if (!(timer > 100)){  
+     for (int i = 0; i < flames.length; i ++ ) {
+      flames[i].display();
+      flames[i].update();
+     }
+   }
+   
   }
   
   
