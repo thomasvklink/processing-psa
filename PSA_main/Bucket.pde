@@ -2,6 +2,7 @@ class Bucket {
 
   float bucketX;
   float bucketY;
+  boolean bucketfill;
 
 
   Bucket(float initXPositionFixed, float initYPositionFixed) {
@@ -16,8 +17,9 @@ class Bucket {
     } else {
       fill(GRAY);
     }
-    rect(bucketX, bucketY, 60, 60, 20);
-    rect(bucketX, bucketY-10, 70, 70, 800);
+    rect(bucketX, bucketY, 40, 40, 10);
+    rect(bucketX, bucketY-10, 45, 45, 20);
+    rect(bucketX, bucketY-15, 50, 50, 30);
   }
 
   void movebucket(float initXPositionFixed, float initYPositionFixed) {
@@ -26,9 +28,8 @@ class Bucket {
     if ((mouseY >= height/2+100) && (mouseY<=height/2+300)) {
       bucketfill = true;
     }
-    if ((mouseY >=height/2+100) && (mouseX >= (width/2-50)) && (mouseX<= (width/2+50))) {
+    if ((mouseY >=height/2+200) && (mouseX >= (width/2-50)) && (mouseX<= (width/2+50))) {
       bucketfill = false;
-      drown = true;
     }
   }
 }

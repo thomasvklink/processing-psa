@@ -13,8 +13,8 @@ Land land;
 Bucket bucket;
 Fireplace fireplace;
 Clouds cloud;
-boolean bucketfill;
-boolean drown;
+
+
 
 void setup() {
   fullScreen();

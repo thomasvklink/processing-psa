@@ -13,7 +13,6 @@ class Fireplace {
   Fireplace(float initXPosition, float initYPosition) {
     xPosition = initXPosition;
     yPosition = initYPosition;
-    drown = false;
   }
 
   void load() {
@@ -29,11 +28,9 @@ class Fireplace {
     ellipse(xPosition, yPosition, 300, 100);
     shape(fireplace, xPosition, yPosition, width, height);
     shape(logs, xPosition, yPosition-50, width, height);
-    if (!drown) {
-      for (int i = 0; i < flames.length; i ++ ) {
-        flames[i].display();
-        flames[i].update();
-      }
+    for (int i = 0; i < flames.length; i ++ ) {
+      flames[i].display();
+      flames[i].update();
     }
   }
 }
