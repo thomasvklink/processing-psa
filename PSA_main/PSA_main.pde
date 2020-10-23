@@ -10,6 +10,8 @@ Trees trees;
 Water water;
 Flow[] streams = new Flow[20];
 Land land;
+Bucket bucket;
+
 
 void setup() {
   fullScreen();
@@ -26,6 +28,7 @@ void setup() {
   }
   land = new Land(width/2, height/2);
   land.load();
+  bucket = new Bucket(width/2-700, height/2+400);
 }
 
 void draw() {
@@ -37,4 +40,9 @@ void draw() {
     streams[i].update();
   }
   land.display();
+  bucket.display();
+}
+
+void mouseDragged() {
+  bucket.movebucket(mouseX, mouseY);
 }
