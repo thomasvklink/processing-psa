@@ -14,27 +14,33 @@ Bucket bucket;
 Fireplace fireplace;
 Clouds cloud;
 
+boolean isBurning;
 
 
 void setup() {
+  //Sketch settings
   fullScreen();
   shapeMode(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
+  //Creating objects
   sky = new Sky(width/2, height/2);
   trees = new Trees(width/2, height/2);
-  trees.load();
   water = new Water(width/2, height/2);
-  water.load();
   for (int i = 0; i < streams.length; i ++ ) {
     streams[i] = new Flow(random(0, width), random(height/2+100, height-height/4), random(20, 80), random(5, 10), random(0.1, 0.4));
   }
   land = new Land(width/2, height/2);
-  land.load();
   bucket = new Bucket(width/2-700, height/2+400);
-  fireplace = new Fireplace(width/2, height/2+350);
+  fireplace = new Fireplace(width/2, height/2+300);
+  cloud = new Clouds(random(0,width),height/2);
+  //Loading images
+  trees.load();
+  water.load();
+  land.load();
   fireplace.load();
-  cloud = new Clouds(random(0, width), height/2);
+  //Set booleans for logic
+  isBurning=true;
 }
 
 void draw() {
@@ -51,5 +57,5 @@ void draw() {
 }
 
 void mouseDragged() {
-  bucket.movebucket(mouseX, mouseY);
+  bucket.move(mouseX, mouseY);
 }
