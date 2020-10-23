@@ -10,6 +10,7 @@ Trees trees;
 Water water;
 Flow[] streams = new Flow[20];
 Land land;
+Fireplace fireplace;
 Clouds cloud;
 
 void setup() {
@@ -27,6 +28,8 @@ void setup() {
    }
   land = new Land(width/2, height/2);
   land.load();
+  fireplace = new Fireplace(width/2, height/2+300);
+  fireplace.load();
   cloud = new Clouds(random(0,width),height/2);
 }
 
@@ -41,4 +44,5 @@ void draw() {
   cloud.display();
   cloud.update();
   land.display();
+  fireplace.display();
 }
