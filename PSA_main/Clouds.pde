@@ -2,18 +2,16 @@ class Clouds {
 
   float cloudX;
   float cloudY;
-  float speedX;
+  float speedX = 1;
 
   Clouds(float initXPositionFixed, float initYPositionFixed) {
-    cloudX =  initXPositionFixed;
+    cloudX = initXPositionFixed;
     cloudY = initYPositionFixed;
-    initXPositionFixed = width/2;
-    initYPositionFixed = height/2;
   }
 
   void display() {
     noStroke();
-    fill(255, 255, 255);
+    fill(255);
 
     //cloud 1
     ellipse(cloudX, cloudY-300, 100, 100);
@@ -63,4 +61,6 @@ class Clouds {
       cloudX++;
     }
   }
+  
+  
 }
