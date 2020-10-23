@@ -17,10 +17,10 @@ class Fireplace {
     fireplace = loadShape("fireplace.svg");
     logs = loadShape("logs.svg");
     for (int i = 0; i < flames.length; i ++ ) {
-    flames[i] = new Fire(random(xPosition-40,xPosition+40), yPosition-20, random(1,3), random(1,2.5));
-   }
+      flames[i] = new Fire(random(xPosition-40, xPosition+40), yPosition-20, random(1, 3), random(1, 2.5));
+    }
   }
-  
+
   void display() {
    fill(121,101,97);
    ellipse(xPosition, yPosition, 300, 100);
@@ -39,6 +39,4 @@ class Fireplace {
    }
    
   }
-  
-  
 }
