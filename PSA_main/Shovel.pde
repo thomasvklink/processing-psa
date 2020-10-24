@@ -2,13 +2,11 @@ class Shovel {
 
   float shovelX;
   float shovelY;
-  boolean stir;
 
 
   Shovel(float initXPositionFixed, float initYPositionFixed) {
     shovelX = initXPositionFixed;
     shovelY = initYPositionFixed;
-    stir = false;
     overshovel = true;
   }
   void display() {
@@ -33,7 +31,7 @@ class Shovel {
   void drag(float initXPositionFixed, float initYPositionFixed) {
     shovelX = initXPositionFixed;
     shovelY = initYPositionFixed;
-    if (!isBurning && (mouseY >= height/2+35) && (mouseY<=height/2+300)) {  //if the fire is not burning anymore and the shovel is over the fire let stir become true
+    if (!isBurning && drown && (mouseY >= height/2+35) && (mouseY<=height/2+300)) {  //if the fire is not burning anymore and the shovel is over the fire let stir become true
       stir = true;
     }
   }

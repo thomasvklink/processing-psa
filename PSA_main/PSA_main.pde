@@ -18,6 +18,9 @@ Shovel shovel;
 boolean isBurning;
 boolean overbucket;
 boolean overshovel;
+boolean drown;
+boolean stir;
+boolean drown2;
 
 
 void setup() {
@@ -48,6 +51,9 @@ void setup() {
 
   //Set booleans for logic
   isBurning=true;
+  drown = false;
+  stir = false;
+  drown2 = false;
 }
 
 void draw() {

@@ -43,6 +43,11 @@ class Bucket {
     }
     if ((mouseY >=height/2+200) && (mouseX >= (width/2-50)) && (mouseX<= (width/2+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
       bucketfill = false;  //bucket is emptied
+      isBurning = false;
+      drown = true;
     }
+     if (drown && stir && !isBurning && (mouseY >=height/2+200) && (mouseX >= (width/2-50)) && (mouseX<= (width/2+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
+      drown2 = true;
+     }
   }
 }
