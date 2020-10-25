@@ -63,6 +63,14 @@ class Person {
     popMatrix();
   }
 
+void update(int tempMouseY) {
+    //Calculate angle between mouse and image for animation.
+    legAngle = (tempMouseY/4)/6;
+    legAngle2 = -legAngle;
+    heightAdjust = tempMouseY/8.5;
+    println(legAngle);
+  }
+
   void drag() {
     if (drown && stir && !isBurning && drown2 && (mouseY >=height/2+200) && (mouseX >= (width/2-50)) && (mouseX<= (width/2+50))) {  //if the person is over the fire and all other steps have been done, let boolean feel become true.
       feel = true;
