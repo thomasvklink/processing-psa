@@ -53,6 +53,7 @@ class Sky {
     }
     text("step 4: feel if your fire is still hot", 10, 150);
     if (drown && stir && drown2 && feel) {
+      fill(57, 225, 20);
       String s = "Congratulations! You succesfully put out your fire!"; 
       fill(80, 80, 80);  
       textSize(40);
