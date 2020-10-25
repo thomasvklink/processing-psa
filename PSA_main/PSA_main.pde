@@ -5,6 +5,7 @@
  October 2020
  */
 
+//Reference classes
 Sky sky;
 Trees trees;
 Water water;
@@ -15,6 +16,7 @@ Fireplace fireplace;
 Clouds cloud;
 Shovel shovel;
 Person man;
+Interface gui;
 
 //create booleans
 boolean isBurning;
@@ -45,6 +47,7 @@ void setup() {
   shovel = new Shovel((width/2+370), (height/2+100));
   fireplace = new Fireplace(width/2, height/2+300);
   cloud = new Clouds(random(0, width), height/2);
+  gui = new Interface(width/2, height/2);
   man = new Person(width/2-450, height/2+450);
 
   //Loading images
@@ -53,6 +56,7 @@ void setup() {
   land.load();
   fireplace.load();
   man.load();
+  gui.load();
 
   //Set booleans for logic
   isBurning=true;
@@ -75,6 +79,7 @@ void draw() {
   man.display();
   shovel.display();
   bucket.display();
+  gui.display();
   if (!overbucket && !overshovel) {
     man.update(mouseY, mouseX);
   }
