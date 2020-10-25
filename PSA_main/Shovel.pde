@@ -4,9 +4,9 @@ class Shovel {
   float shovelY;
 
 
-  Shovel(float initXPositionFixed, float initYPositionFixed) {
-    shovelX = initXPositionFixed;
-    shovelY = initYPositionFixed;
+  Shovel(float initXPosition, float initYPosition) {
+    shovelX = initXPosition;
+    shovelY = initYPosition;
     overshovel = true;
   }
   void display() {

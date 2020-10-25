@@ -41,10 +41,10 @@ void setup() {
   }
   land = new Land(width/2, height/2);
   bucket = new Bucket(width/2-700, height/2+400);
-  shovel = new Shovel((width/2-370), (height/2+100));
+  shovel = new Shovel((width/2+370), (height/2+100));
   fireplace = new Fireplace(width/2, height/2+300);
   cloud = new Clouds(random(0, width), height/2);
-  man = new Person(width/2-400,height/2+300);
+  man = new Person(width/2-400,height/2+400);
 
   //Loading images
   trees.load();
@@ -84,5 +84,5 @@ void mouseDragged() {
   if (!overbucket && overshovel) {
     shovel.drag(mouseX, mouseY);
   }
-  man.update(mouseY);
+  man.update(mouseY,mouseX);
 }
