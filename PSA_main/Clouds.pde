@@ -55,8 +55,8 @@ class Clouds {
   }
 
   void update() {
-    if (cloudX > 1.2*width) {
-      cloudX = 0;
+    if (cloudX > 1.6*width) {
+      cloudX = -850;
     } else {
       cloudX++;
     }
