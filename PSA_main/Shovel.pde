@@ -1,5 +1,6 @@
 class Shovel {
 
+  //Variables for position
   float shovelX;
   float shovelY;
 
@@ -7,12 +8,14 @@ class Shovel {
   Shovel(float initXPosition, float initYPosition) {
     shovelX = initXPosition;
     shovelY = initYPosition;
+
+    //call global boolean out main class
     overshovel = true;
   }
   void display() {
     if ((mouseX <= shovelX+80) && (mouseX >= shovelX-10) && (mouseY <=shovelY+265) && (mouseY >= shovelY-200)) {  //if the mouse is over the shovel let the boolean overshovel be true
       overshovel = true;
-    } else {  //if the mouse is not over the bucket let the boolean overbucket be false
+    } else {  //if the mouse is not over the shovel let the boolean overshovel be false
       overshovel = false;
     }
     //stick

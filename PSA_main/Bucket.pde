@@ -1,5 +1,6 @@
 class Bucket {
 
+  //Variables for position and boolean bucketfill
   float bucketX;
   float bucketY;
   boolean bucketfill;
@@ -8,6 +9,8 @@ class Bucket {
   Bucket(float initXPositionFixed, float initYPositionFixed) {
     bucketX = initXPositionFixed;
     bucketY = initYPositionFixed;
+
+    //set booleans for logic
     bucketfill = false;
     overbucket = false;
   }
@@ -26,9 +29,9 @@ class Bucket {
     rect(bucketX, bucketY-15, 50, 50, 20);
     rect(bucketX, bucketY-15, 50, 50, 25);
 
-    if (bucketfill) {  
+    if (bucketfill) {  //if the boolean bucketfill is true
       fill(28, 163, 236);  //set the color to light blue
-    } else {
+    } else {  //if boolean bucketfill is false
       fill(154, 154, 154);  //set the color to gray
     }
     //inside of the bucket
@@ -38,6 +41,8 @@ class Bucket {
   void drag(float initXPositionFixed, float initYPositionFixed) {
     bucketX = initXPositionFixed;
     bucketY = initYPositionFixed;
+
+    //if the bucket is over the river let it fill up
     if ((mouseY >= height/2+100) && (mouseY<=height/2+300)) {
       bucketfill = true;
     }
@@ -46,8 +51,8 @@ class Bucket {
       isBurning = false;  //fire goes out
       drown = true;   //step drown completed
     }
-     if (drown && stir && !isBurning && (mouseY >=height/2+200) && (mouseX >= (width/2-50)) && (mouseX<= (width/2+50))) {  //if the bucket is over the fireplace and drown and stir are true and isBurning is false let boolean drown 2 become true.
-      drown2 = true;
-     }
+    if (drown && stir && !isBurning && (mouseY >=height/2+200) && (mouseX >= (width/2-50)) && (mouseX<= (width/2+50))) {  //if the bucket is over the fireplace and drown and stir are true and isBurning is false let boolean drown 2 become true.
+      drown2 = true;  //step drown2 completed
+    }
   }
 }

@@ -1,8 +1,8 @@
 class Clouds {
 
+  //Variables for position
   float cloudX;
   float cloudY;
-  float speedX = 1;
 
   Clouds(float initXPositionFixed, float initYPositionFixed) {
     cloudX = initXPositionFixed;
@@ -55,6 +55,7 @@ class Clouds {
   }
 
   void update() {
+    //update the positions of the clouds
     if (cloudX > 1.6*width) {
       cloudX = -850;
     } else {

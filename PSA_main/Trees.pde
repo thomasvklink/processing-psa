@@ -14,6 +14,7 @@ class Trees {
   }
 
   void load() {
+    //Load all the SVG's for the tree's
     tree1 = loadShape("trees1.svg");
     tree2 = loadShape("trees2.svg");
   }

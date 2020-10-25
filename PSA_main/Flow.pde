@@ -1,5 +1,6 @@
 class Flow {
 
+  //Variables for position, size and speed
   float flowX;
   float flowY;
   float flowSizeX;
@@ -15,11 +16,13 @@ class Flow {
   }
 
   void display() {
+    //make 1 stream
     fill(255);
     rect(flowX, flowY, flowSizeX, flowSizeY);
   }
 
   void update() {
+    //update the position of the stream
     if (flowX > 1.05*width) {
       flowX = 0;
     } else {
