@@ -80,9 +80,6 @@ void draw() {
   shovel.display();
   bucket.display();
   gui.display();
-  if (!overbucket && !overshovel) {
-    man.update(mouseY, mouseX);
-  }
 }
 
 void mouseDragged() {
@@ -94,4 +91,6 @@ void mouseDragged() {
   if (!overbucket && overshovel) {
     shovel.drag(mouseX, mouseY);
   }
+  
+  man.update(mouseY, mouseX);
 }
