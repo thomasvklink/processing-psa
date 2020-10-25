@@ -14,6 +14,7 @@ Bucket bucket;
 Fireplace fireplace;
 Clouds cloud;
 Shovel shovel;
+Person man;
 
 boolean isBurning;
 boolean overbucket;
@@ -35,19 +36,21 @@ void setup() {
   trees = new Trees(width/2, height/2);
   water = new Water(width/2, height/2);
   for (int i = 0; i < streams.length; i ++ ) {
-    streams[i] = new Flow(random(0, width), random(height/2+100, height-height/4), random(20, 80), random(5, 10), random(0.1, 0.4));
+    streams[i] = new Flow(random(0, width), random(height/2+100, height-height/4), random(20, 200), random(5, 8), random(0.1, 0.4));
   }
   land = new Land(width/2, height/2);
   bucket = new Bucket(width/2-700, height/2+400);
   shovel = new Shovel((width/2-370), (height/2+100));
   fireplace = new Fireplace(width/2, height/2+300);
   cloud = new Clouds(random(0, width), height/2);
+  man = new Person(width/2-400,height/2+300);
 
   //Loading images
   trees.load();
   water.load();
   land.load();
   fireplace.load();
+  man.load();
 
   //Set booleans for logic
   isBurning=true;
@@ -66,8 +69,10 @@ void draw() {
   }
   land.display();
   fireplace.display();
+  man.display();
   shovel.display();
   bucket.display();
+  
 }
 
 void mouseDragged() {
@@ -77,4 +82,5 @@ void mouseDragged() {
   if (!overbucket && overshovel) {
     shovel.drag(mouseX, mouseY);
   }
+  man.update(mouseY);
 }
