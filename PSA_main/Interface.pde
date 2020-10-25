@@ -16,7 +16,9 @@ class Interface {
 
   void display() {
     shape(leaves, xPositionFixed, yPositionFixed, width, height);
-       fill(80, 80, 80);
+
+    //set the text for instructions and ending
+    fill(80, 80, 80);
     textSize(32);
     text("Complete the steps to put out your campfire", 10, 30);
     if (drown) {
@@ -42,9 +44,11 @@ class Interface {
     }
     text("step 4: feel if your fire is still hot", 10, 150);
     if (drown && stir && drown2 && feel) {
-      textSize(60);
-      fill(80, 80, 80);
-      text("Congratulations! You succesfully put out your fire!", width/2, 90);
+      fill(57, 225, 20);
+      String s = "Congratulations! You succesfully put out your fire!"; 
+      fill(80, 80, 80);  
+      textSize(40);
+      text(s, (width/2), (height/2-300), 500, 300);  //text wraps itself within set box
     }
   }
 }
