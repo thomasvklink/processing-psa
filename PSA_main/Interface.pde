@@ -1,7 +1,9 @@
 class Interface {
-
+  
+ //PShapes for SVG images to draw the leaves
   PShape leaves;
 
+//Variables for position
   float xPositionFixed;
   float yPositionFixed;
 
@@ -48,7 +50,7 @@ class Interface {
       String s = "Congratulations! You succesfully put out your fire!"; 
       fill(80, 80, 80);  
       textSize(40);
-      text(s, (width/2), (height/2-300), 500, 300);  //text wraps itself within set box
+      text(s, (width/2), (height/2-300), 500, 300);  //text made in string s wraps itself within set box
     }
   }
 }
