@@ -38,8 +38,9 @@ class Bucket {
   void drag(float initXPositionFixed, float initYPositionFixed) {
     bucketX = initXPositionFixed;
     bucketY = initYPositionFixed;
-    if ((mouseY >= height/2+100) && (mouseY<=height/2+300)) {  //if the bucket is being dragged over the river let boolean bucketfill become true
-      bucketfill = true;  //bucket is filled
+    if ((mouseY >= height/2+100) && (mouseY<=height/2+300)) {
+      bucketfill = true;
+      isBurning = false;
     }
     if ((mouseY >=height/2+200) && (mouseX >= (width/2-50)) && (mouseX<= (width/2+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
       bucketfill = false;  //bucket is emptied
