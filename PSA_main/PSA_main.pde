@@ -22,6 +22,7 @@ boolean overshovel;
 boolean drown;
 boolean stir;
 boolean drown2;
+boolean feel;
 
 
 void setup() {
@@ -57,6 +58,7 @@ void setup() {
   drown = false;
   stir = false;
   drown2 = false;
+  feel = false;
 }
 
 void draw() {
