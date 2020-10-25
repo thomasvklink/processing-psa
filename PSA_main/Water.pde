@@ -1,32 +1,28 @@
 class Water {
-  
+
   PShape reflection;
-  
+
   float xPositionFixed;
   float yPositionFixed;
 
   Water(float initXPositionFixed, float initYPositionFixed) {
     xPositionFixed =  initXPositionFixed;
     yPositionFixed = initYPositionFixed;
-    initXPositionFixed = width/2;
-    initYPositionFixed = height/2;
   }
-  
+
   void load() {
+    //Load the SVG for the reflection
     reflection = loadShape("reflection.svg");
   }
-  
-  void display() {
-    noStroke();
-    fill(3,151,157);
-    rect(xPositionFixed, yPositionFixed+360, width, height/2);
-    shape(reflection, xPositionFixed, yPositionFixed, width, height);
-  //  fill(255,255,255);
-   // rect(random (xPositionFixed-1200, xPositionFixed+1200), random(yPositionFixed+300, yPositionFixed+360), random(10,50), random(10,50));
-  }
-  
- void stream() {
 
+  void display() {
+
+    //create the river
+    noStroke();
+    fill(3, 151, 157);
+    rect(xPositionFixed, yPositionFixed+360, width, height/2);
+
+    //set the SVG
+    shape(reflection, xPositionFixed, yPositionFixed, width, height);
   }
-    
- }
+}

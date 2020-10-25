@@ -1,5 +1,5 @@
 class Trees {
-  
+
   PShape tree1;
   PShape tree2;
 
@@ -14,10 +14,11 @@ class Trees {
   }
 
   void load() {
+    //Load all the SVG's for the tree's
     tree1 = loadShape("trees1.svg");
     tree2 = loadShape("trees2.svg");
   }
-  
+
   void display() {
     shape(tree1, xPositionFixed, yPositionFixed, width, height);
     shape(tree2, xPositionFixed, yPositionFixed, width, height);

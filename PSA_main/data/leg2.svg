@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="93.761421"
+   height="181.2355"
+   viewBox="0 0 24.807709 47.951894"
+   version="1.1"
+   id="svg20"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="leg2.svg">
+  <defs
+     id="defs14">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect920"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect899"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="8"
+     inkscape:cx="26.252617"
+     inkscape:cy="162.83706"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     showguides="false" />
+  <metadata
+     id="metadata17">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Background"
+     transform="translate(-241.59614,-118.899)" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Rocks"
+     style="display:inline"
+     transform="translate(-241.59614,-118.899)">
+    <path
+       id="path918"
+       style="fill:#656e67;fill-opacity:1;stroke:#656e67;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 253.49318,165.65578 c 2.98494,0.78515 4.36258,1.03875 7.43532,1.0465 1.87163,-0.31591 4.26957,-0.91938 4.85876,-2.98108 0.67255,-1.56373 0.45701,-3.26068 -0.0474,-4.7944 -0.63805,-1.83265 -0.6545,-3.76923 -0.95057,-5.68063 -0.1307,-3.18688 0.12307,-6.39253 -0.17167,-9.56875 -0.35011,-2.94728 -1.04022,-5.8449 -1.20082,-8.82841 0.003,-1.76967 -1.20469,-3.05996 -1.74405,-4.63089 -1.1119,-1.61514 -1.00419,-3.70375 -1.78056,-5.4463 -0.48988,-1.96841 -2.13748,-3.36671 -3.69233,-4.54791 -1.84366,-1.30762 -4.25245,-1.42016 -6.38366,-0.81787 -1.62349,0.34375 -3.52181,0.6485 -4.54642,2.03321 -1.23434,1.25164 -1.97626,2.87509 -2.26144,4.59583 -0.57501,2.06692 -1.4408,4.10384 -1.27724,6.30377 0.28796,2.01057 1.5055,3.77065 2.33989,5.59716 1.12942,1.59488 1.47776,3.535 1.46621,5.4552 0.0498,2.37049 0.63223,4.70382 1.58234,6.86352 0.66899,2.22881 1.0271,4.5607 1.93959,6.71778 0.47287,1.87168 1.26797,3.92596 1.57479,5.51727 0.56698,2.79979 2.85926,3.166 2.85926,3.166 z"
+       sodipodi:nodetypes="cccccccccccccccccccc" />
+  </g>
+</svg>
