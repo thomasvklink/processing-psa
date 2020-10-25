@@ -20,9 +20,9 @@ class Interface {
     shape(leaves, xPositionFixed, yPositionFixed, width, height);
 
     //set the text for instructions and ending
-    fill(80, 80, 80);
-    textSize(32);
-    text("Complete the steps to put out your campfire", 10, 30);
+    fill(255);
+    textSize(28);
+    text("Complete the steps to put out your campfire", 10, 60);
     if (drown) {
       fill(35, 220, 0);
     }
