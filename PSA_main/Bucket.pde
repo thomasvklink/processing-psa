@@ -40,9 +40,8 @@ class Bucket {
     bucketY = initYPositionFixed;
     if ((mouseY >= height/2+100) && (mouseY<=height/2+300)) {
       bucketfill = true;
-      isBurning = false;
     }
-    if ((mouseY >=height/2+200) && (mouseX >= (width/2-50)) && (mouseX<= (width/2+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
+    if ((mouseY >=height/2+200) && (mouseY <=height/2+300)&&(mouseX >= (width/2-50)) && (mouseX<= (width/2+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
       bucketfill = false;  //bucket is emptied
       isBurning = false;  //fire goes out
       drown = true;   //step drown completed
