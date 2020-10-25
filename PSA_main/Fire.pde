@@ -14,7 +14,7 @@ class Fire {
     flameDeg = initFlameDeg;
   }
 
-  void display() {
+  void display() { //Draw particle
    fill(255, g, 36,a);
    rect(xPosition, yPosition, 20, 20);
   }
@@ -22,17 +22,17 @@ class Fire {
   void update() {
    
    yPosition = yPosition - fireY;
-   g = g - flameDeg;
-   a = a - 1.3;
+   g = g - flameDeg; //Change color when particle as they moves up
+   a = a - 1.3; //Change transparancy of particles as they move up
    
-   if (yPosition < 500){
+   if (yPosition < 500){ //Reset position, color and transparancy to keep the fire burning
      yPosition = height/2+300;
      g = 248;
      a = 255;
    }
    
    if (!isBurning){
-     a = a-10;
+     a = a-10; //Fade out all particles when fire is put out (setting isBurining to false)
    }
    
   }

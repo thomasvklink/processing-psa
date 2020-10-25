@@ -1,8 +1,8 @@
 class Fireplace {
-  
+  //PShapes for SVG images to draw the fireplace and wooden logs
   PShape fireplace;
   PShape logs;
-  Fire[] flames = new Fire[60];
+  Fire[] flames = new Fire[60]; //Use class Fire for particles
 
   float xPosition;
   float yPosition;
