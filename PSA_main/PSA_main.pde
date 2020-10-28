@@ -5,15 +5,10 @@
  October 2020
  */
 
+
 //Reference classes
-Sky sky;
-Trees trees;
-Water water;
-Flow[] streams = new Flow[20];
-Land land;
+Background background;
 Bucket bucket;
-Fireplace fireplace;
-Clouds cloud;
 Shovel shovel;
 Person man;
 Interface gui;
@@ -36,25 +31,13 @@ void setup() {
   rectMode(CENTER);
 
   //Creating objects
-  sky = new Sky(width/2, height/2);
-  trees = new Trees(width/2, height/2);
-  water = new Water(width/2, height/2);
-  for (int i = 0; i < streams.length; i ++ ) {
-    streams[i] = new Flow(random(0, width), random(height/2+100, height-height/4), random(20, 200), random(5, 8), random(0.1, 0.4));
-  }
-  land = new Land(width/2, height/2);
   bucket = new Bucket(width/2-700, height/2+400);
   shovel = new Shovel((width/2+370), (height/2+100));
-  fireplace = new Fireplace(width/2, height/2+300);
-  cloud = new Clouds(random(0, width), height/2);
+  background = new Background(width/2, height/2);
   gui = new Interface(width/2, height/2);
   man = new Person(width/2-450, height/2+450);
 
   //Loading images
-  trees.load();
-  water.load();
-  land.load();
-  fireplace.load();
   man.load();
   gui.load();
 
@@ -67,15 +50,7 @@ void setup() {
 }
 
 void draw() {
-  sky.display();
-  trees.display();
-  water.display(); 
-  for (int i = 0; i < streams.length; i++) { 
-    streams[i].display();
-    streams[i].update();
-  }
-  land.display();
-  fireplace.display();
+  background.display();
   man.display();
   shovel.display();
   bucket.display();
@@ -91,6 +66,8 @@ void mouseDragged() {
   if (!overbucket && overshovel) {
     shovel.drag(mouseX, mouseY);
   }
-  
+//if the mouse is over the man and not over the bucket or the shovel let the man move while dragging.
+  if (!overbucket && !overshovel) {
   man.update(mouseY, mouseX);
+}
 }

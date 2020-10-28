@@ -43,15 +43,15 @@ class Bucket {
     bucketY = initYPositionFixed;
 
     //if the bucket is over the river let it fill up
-    if ((mouseY >= height/2+100) && (mouseY<=height/2+300)) {
+    if ((initYPositionFixed >= height/2+100) && (initYPositionFixed<=height/2+300)) {
       bucketfill = true;
     }
-    if ((mouseY >=height/2+200) && (mouseY <=height/2+300)&&(mouseX >= (width/2-50)) && (mouseX<= (width/2+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
+    if ((initYPositionFixed >=height/2+200) && (initYPositionFixed <=height/2+300)&&(initXPositionFixed >= (width/2-50)) && (initXPositionFixed<= (width/2+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
       bucketfill = false;  //bucket is emptied
       isBurning = false;  //fire goes out
       drown = true;   //step drown completed
     }
-    if (drown && stir && !isBurning && (mouseY >=height/2+200) && (mouseX >= (width/2-50)) && (mouseX<= (width/2+50))) {  //if the bucket is over the fireplace and drown and stir are true and isBurning is false let boolean drown 2 become true.
+    if (drown && stir && !isBurning && (initYPositionFixed >=height/2+200) && (initXPositionFixed >= (width/2-50)) && (initXPositionFixed<= (width/2+50))) {  //if the bucket is over the fireplace and drown and stir are true and isBurning is false let boolean drown 2 become true.
       drown2 = true;  //step drown2 completed
     }
   }

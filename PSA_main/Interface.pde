@@ -1,9 +1,9 @@
 class Interface {
-  
- //PShapes for SVG images to draw the leaves
+
+  //PShapes for SVG images to draw the leaves
   PShape leaves;
 
-//Variables for position
+  //Variables for position
   float xPositionFixed;
   float yPositionFixed;
 
@@ -48,7 +48,10 @@ class Interface {
     if (drown && stir && drown2 && feel) {
       textSize(60);
       fill(80, 80, 80);
-      text("Congratulations! You succesfully put out your fire!", width/2, 90);
+      String s = "Congratulations! You succesfully put out your fire!";  
+      fill(80, 80, 80);   
+      textSize(40); 
+      text(s, (width/2), (height/2-200), 500, 300);  //text wraps itself within set box
     }
   }
 }
