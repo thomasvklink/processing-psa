@@ -1,3 +1,8 @@
+/*
+  This is a class Person used to create the person that represents you which has made the campfire and needs to put it out correctly.
+  This person is made out of separate parts and will be used in the 4th and final step of putting out your campfire.
+*/
+
 class Person {
 
   //PShapes for SVG images to make the body of the person

@@ -1,3 +1,8 @@
+/*
+  This is a class Fireplace used to create the Fireplace that is seen on the screen most of the interactions happen with this Fireplace.\
+  It is also used to call the class Fire.
+*/
+
 class Fireplace {
   //PShapes for SVG images to draw the fireplace and wooden logs
   PShape fireplace;

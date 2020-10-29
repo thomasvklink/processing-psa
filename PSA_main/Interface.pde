@@ -1,3 +1,8 @@
+/*
+  This is a class Interface used to create the front display of the interactive poster.
+  It shows text and some leaves on the foreground it helps to give the poster a more in depth view.
+*/
+
 class Interface {
 
   //PShapes for SVG images to draw the leaves

@@ -1,3 +1,8 @@
+/*
+  This is a class Land used to create the land at the bottom of the interactive poster.
+  Most items and other classes are to be placed on this land.
+*/
+
 class Land {
 
   //PShape for SVG image

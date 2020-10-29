@@ -3,6 +3,13 @@
  P4WCI 2020
  Tristan van Marle, Thomas van Klink
  October 2020
+ 
+ Program description:
+ This program shows an interactive poster on how to correctly put out your fire.
+ It was based on a public service announcement on how to prevent wildfires from BeOutdoorSafe.
+ Which is in association with Smokey the largest wildfire prevention service in the US. 
+ The program was designed to raise awareness in how to properly put out your campfire. 
+ The program has multiple steps which will have to be done in the correct order to correctly put out you fire.
  */
 
 
