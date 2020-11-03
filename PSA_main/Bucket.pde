@@ -50,10 +50,6 @@ class Bucket {
     bucketY = tempMouseY;
    }
 
-    
-    //if (drown && stir && !isBurning && (bucketY >=fireY-100) && (bucketY <=fireY) && (bucketX >= (fireX-50)) && (bucketX<= (fireX+50))) {  //if the bucket is over the fireplace and drown and stir are true and isBurning is false let boolean drown 2 become true.
-   //   drown2 = true;  //step drown2 completed
-   // }
   }
   
   void hover(int tempMouseX, int tempMouseY){

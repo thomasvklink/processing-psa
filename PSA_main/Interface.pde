@@ -7,15 +7,19 @@ class Interface {
 
   //PShapes for SVG images to draw the leaves
   PShape leaves;
+  PShape ribbon;
 
   //Variables for position
   float xPositionFixed;
   float yPositionFixed;
   
+  float passMouseX;
+  float passMouseY;
+  
   //set booleans
- boolean stir;
- boolean drown2;
- boolean feel;
+  boolean stir;
+  boolean drown2;
+  boolean feel;
  
   Interface(float initXPositionFixed, float initYPositionFixed) {
     xPositionFixed =  initXPositionFixed;
@@ -24,9 +28,16 @@ class Interface {
 
   void load() {
     leaves = loadShape("leaves.svg");
+    ribbon = loadShape("ribbon.svg");
+  }
+  
+  void input(float tempMouseX, float tempMouseY){
+    passMouseX = tempMouseX;
+    passMouseY = tempMouseY;
   }
     void check(){
-    fireplace.check(bucket.bucketX, bucket.bucketY, fireplace.drown, bucket.bucketfill, shovel.shovelX, shovel.shovelY, fireplace.stir);
+    //Since all interactions happen with the fireplace, these checkes are made withing a method in class Fireplace.
+    fireplace.check(bucket.bucketX, bucket.bucketY, fireplace.drown, bucket.bucketfill, shovel.shovelX, shovel.shovelY, fireplace.stir, passMouseX, passMouseY);
   }
 
   void display() {
@@ -46,25 +57,26 @@ class Interface {
       fill(255);
     }
     text("step 2: stir your fire", 10, 130);
-    if (fireplace.drown && fireplace.stir && drown2) {
+    if (fireplace.drown && fireplace.stir && fireplace.drown2) {
       fill(57, 225, 20);
     } else {
       fill(255);
     }
     text("step 3: drown your fire again", 10, 160);
-    if (fireplace.drown && fireplace.stir && drown2 && feel) {
+    if (fireplace.drown && fireplace.stir && fireplace.drown2 && fireplace.feel) {
       fill(57, 225, 20);
     } else {
       fill(255);
     }
     text("step 4: feel if your fire is still hot", 10, 190);
-    if (fireplace.drown && fireplace.stir && drown2 && feel) {
+    if (fireplace.drown && fireplace.stir && fireplace.drown2 && fireplace.feel) {
+      shape(ribbon, xPositionFixed, yPositionFixed, width/2, height/4);
       textSize(60);
-      fill(80, 80, 80);
-      String s = "Congratulations! You succesfully put out your fire!";  
-      fill(80, 80, 80);   
-      textSize(40); 
-      text(s, (width/2), (height/2-200), 500, 300);  //text wraps itself within set box
+      fill(255);
+      text("Congratulations!", xPositionFixed-250, yPositionFixed+25);
+      fill(210);   
+      textSize(35); 
+      text("You put out your fire in the correct way!", xPositionFixed-350, yPositionFixed+100);  //text wraps itself within set box
     }
   }
   

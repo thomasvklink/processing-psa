@@ -55,9 +55,9 @@ void setup() {
   //Set booleans for logic
   //isBurning=true;
   //drown = false;
-  stir = false;
-  drown2 = false;
-  feel = false;
+ // stir = false;
+ // drown2 = false;
+ // feel = false;
 }
 
 void draw() {
@@ -79,4 +79,5 @@ void mouseDragged() {
   shovel.drag(mouseX, mouseY);
   man.update(mouseY, mouseX);
   man.limited();
+  gui.input(mouseX, mouseY);
 }
