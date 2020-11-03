@@ -72,14 +72,14 @@ class Fireplace {
     shovelX = tempShovelX;
     shovelY = tempShovelY;
     stir = initStir;
-
+      println(stir);
 
     if (!initBucketFill && (tempBucketY >=yPosition-100) && (tempBucketY <=yPosition)&&(tempBucketX >= (xPosition-50)) && (tempBucketX<= (xPosition+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
       isBurning = false;  //fire goes out
       drown = true;   //step drown completed
     }
-    if (!isBurning && drown && (tempShovelY >=yPosition+35) && (tempShovelY <=yPosition+300)&&(tempShovelX >= (xPosition-50)) && (tempShovelX<= (xPosition+50))) {  //if the fire is not burning anymore and the shovel is over the fire let stir become true
+    if (!isBurning && drown && (tempShovelY >=yPosition-300) && (tempShovelY <=yPosition+35)&&(tempShovelX >= (xPosition-50)) && (tempShovelX<= (xPosition+50))) {  //if the fire is not burning anymore and the shovel is over the fire let stir become true
       stir = true;
+    }
   }
-}
 }
