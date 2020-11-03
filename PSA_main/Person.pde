@@ -90,9 +90,9 @@ class Person {
     popMatrix();
   }
 
-  void update(int tempMouseY, int tempMouseX) {
+  void update(int tempMouseY, int tempMouseX, boolean initOverBucket, boolean initOverShovel) {
     //When mouse is between set limits, update the angles of the joints in the legs, head and arm in relation to the height of the mouse.
-    if (tempMouseX > xPosition && tempMouseX < xPosition + 600) {
+    if (tempMouseX > xPosition && tempMouseX < xPosition + 600 && !initOverBucket && !initOverShovel) {
       angle = (tempMouseY/4)/6;
       angle2 = -angle; //The upper leg rotates in the opposite direction as the lower
       headAngle = angle*1.2; //Head rotates slightly faster then other joints

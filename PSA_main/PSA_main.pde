@@ -75,9 +75,9 @@ void mouseDragged() {
   bucket.hover(mouseX,mouseY);
   bucket.drag(mouseX, mouseY);
   bucket.filled(fireplace.xPosition, fireplace.yPosition, background.water.xPositionFixed, background.water.yPositionFixed);
-  shovel.hover(mouseX,mouseY);
+  shovel.hover(mouseX,mouseY, bucket.overbucket);
   shovel.drag(mouseX, mouseY);
-  man.update(mouseY, mouseX);
+  man.update(mouseY, mouseX, bucket.overbucket, shovel.overshovel);
   man.limited();
   gui.input(mouseX, mouseY);
 }

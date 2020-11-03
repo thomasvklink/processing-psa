@@ -37,7 +37,7 @@ class Interface {
   }
     void check(){
     //Since all interactions happen with the fireplace, these checkes are made withing a method in class Fireplace.
-    fireplace.check(bucket.bucketX, bucket.bucketY, fireplace.drown, bucket.bucketfill, shovel.shovelX, shovel.shovelY, fireplace.stir, passMouseX, passMouseY);
+    fireplace.check(bucket.bucketX, bucket.bucketY, fireplace.drown, bucket.bucketfill, shovel.shovelX, shovel.shovelY, fireplace.stir, passMouseX, passMouseY, bucket.overbucket);
   }
 
   void display() {

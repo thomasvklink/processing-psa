@@ -77,7 +77,7 @@ class Fireplace {
     }
   }
 
-  void check(float tempBucketX, float tempBucketY, boolean initDrown, boolean initBucketFill, float tempShovelX, float tempShovelY, boolean initStir, float tempMouseX, float tempMouseY) {
+  void check(float tempBucketX, float tempBucketY, boolean initDrown, boolean initBucketFill, float tempShovelX, float tempShovelY, boolean initStir, float tempMouseX, float tempMouseY, boolean initOverBucket) {
    // bucketX = tempBucketX;
     //bucketY = tempBucketY;
    // drown = initDrown;
@@ -100,7 +100,7 @@ class Fireplace {
       drown2 = true;  //step drown2 completed
     }
     
-    if (drown && stir && !isBurning && drown2 && (tempMouseY >=yPosition+200) && (tempMouseY <=yPosition+300)&& (tempMouseX >= (xPosition-50)) && (tempMouseX<= xPosition+50)) {  //if the person is over the fire and all other steps have been done, let boolean feel become true.
+    if (drown && stir && !isBurning && drown2 && !initOverBucket && (tempMouseY >=yPosition-100) && (tempMouseY <=yPosition+300)&& (tempMouseX >= (xPosition-50)) && (tempMouseX<= xPosition+50)) {  //if the person is over the fire and all other steps have been done, let boolean feel become true.
      feel = true;
     }
   }

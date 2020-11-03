@@ -44,8 +44,8 @@ class Shovel {
     // }
   }
   
-  void hover(int tempMouseX, int tempMouseY){
-    if ((tempMouseX <= shovelX+80) && (tempMouseX >= shovelX-10) && (tempMouseY <=shovelY+265) && (tempMouseY >= shovelY-200)) {  //if the mouse is over the shovel let the boolean overshovel be true
+  void hover(int tempMouseX, int tempMouseY, boolean initOverBucket){
+    if ((tempMouseX <= shovelX+80) && (tempMouseX >= shovelX-10) && (tempMouseY <=shovelY+265) && (tempMouseY >= shovelY-200)&& !initOverBucket) {  //if the mouse is over the shovel let the boolean overshovel be true
       overshovel = true;
     } else {  //if the mouse is not over the shovel let the boolean overshovel be false
       overshovel = false;
