@@ -9,12 +9,14 @@ class Fire {
   float g = 248;
   float a = 255;
   float flameDeg;
+  boolean isBurning;
 
-  Fire(float initXPosition, float initYPosition, float initFireY, float initFlameDeg) {
+  Fire(float initXPosition, float initYPosition, float initFireY, float initFlameDeg, boolean tempIsBurning) {
     xPosition = initXPosition;
     yPosition = initYPosition;
     fireY = initFireY;
     flameDeg = initFlameDeg;
+    isBurning = tempIsBurning;
   }
 
   void display() { //Draw particle

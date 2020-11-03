@@ -13,7 +13,6 @@ class Background {
   Trees trees;
   Water water;
   Land land; 
-  Fireplace fireplace;
 
 
   Background(float initXPosition, float initYPosition) {
@@ -24,14 +23,13 @@ class Background {
     trees = new Trees(width/2, height/2);
     water = new Water(width/2, height/2);
     land = new Land(width/2, height/2);
-    fireplace = new Fireplace(width/2, height/2+300);
 
 
     //Loading images
     trees.load();
     water.load();
     land.load();
-    fireplace.load();
+    
   }
 
   void display() {
@@ -39,6 +37,5 @@ class Background {
     trees.display();
     water.display(); 
     land.display();
-    fireplace.display();
   }
 }

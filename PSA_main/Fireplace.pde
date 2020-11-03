@@ -12,11 +12,15 @@ class Fireplace {
   //Variables for position and timer
   float xPosition;
   float yPosition;
+  float bucketX;
+  float bucketY;
   float timer;
+  boolean isBurning;
 
   Fireplace(float initXPosition, float initYPosition) {
     xPosition = initXPosition;
     yPosition = initYPosition;
+    
   }
 
   void load() {
@@ -26,7 +30,7 @@ class Fireplace {
 
     //create the Fire particles
     for (int i = 0; i < flames.length; i ++ ) {
-      flames[i] = new Fire(random(xPosition-40, xPosition+40), yPosition-20, random(1, 3), random(1, 2.5));
+      flames[i] = new Fire(random(xPosition-40, xPosition+40), yPosition-20, random(1, 3), random(1, 2.5), isBurning);
     }
   }
 
@@ -50,5 +54,15 @@ class Fireplace {
         flames[i].update();
       }
     }
+  }
+  
+  void check(float tempBucketX, float tempBucketY){
+    bucketX = tempBucketX;
+    bucketY = tempBucketY;
+    
+    if ((bucketY >=yPosition-100) && (bucketY <=yPosition)&&(bucketX >= (xPosition-50)) && (bucketX<= (xPosition+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
+        isBurning = false;  //fire goes out
+        drown = true;   //step drown completed
+      }
   }
 }

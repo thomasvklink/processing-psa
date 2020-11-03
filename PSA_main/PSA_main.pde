@@ -17,11 +17,12 @@
 Background background;
 Bucket bucket;
 Shovel shovel;
+Fireplace fireplace;
 Person man;
 Interface gui;
 
 //create booleans
-boolean isBurning;
+//boolean isBurning;
 //boolean overbucket;
 boolean overshovel;
 boolean drown;
@@ -39,17 +40,20 @@ void setup() {
 
   //Creating objects
   background = new Background(width/2, height/2);
+  fireplace = new Fireplace(width/2, height/2+300);
   bucket = new Bucket(width/2-700, height/2+400);
   shovel = new Shovel((width/2+370), (height/2+100));
   gui = new Interface(width/2, height/2);
   man = new Person(width/2-450, height/2+450);
 
   //Loading images
+  fireplace.load();
   man.load();
   gui.load();
+  
 
   //Set booleans for logic
-  isBurning=true;
+  //isBurning=true;
   drown = false;
   stir = false;
   drown2 = false;
@@ -58,24 +62,30 @@ void setup() {
 
 void draw() {
   background.display();
+  fireplace.display();
   man.display();
   shovel.display();
   bucket.display();
   gui.display();
+  
 }
 
 void mouseDragged() {
-  bucket.hover(mouseX, mouseY);
+  
+  bucket.hover(mouseY,mouseX);
+  bucket.drag(mouseX, mouseY);
+  bucket.filled(fireplace.xPosition, fireplace.xPosition, background.water.xPositionFixed, background.water.yPositionFixed);
   
   //if the mouse is over the bucket while dragging let it get dragged.
-  if (overbucket) {
-    bucket.drag(mouseX, mouseY, width/2, height/2+300, width/2, height/2);
-  }
+ // if (overbucket) {
+    
+ // }
   //if the mouse is over the shovel and not over the bucket let the shovel get dragged.
-  if (!overbucket && overshovel) {
+  //if (!overbucket && overshovel) {
     shovel.drag(mouseX, mouseY);
-  }
+//  }
   //if the mouse is over the man and not over the bucket or the shovel let the man move while dragging.
-  if (!overbucket && !overshovel) {
+ // if (!overbucket && !overshovel) {
   man.update(mouseY, mouseX);
+  fireplace.check(bucket.bucketX, bucket.bucketY);
 }

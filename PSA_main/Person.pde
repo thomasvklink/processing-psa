@@ -111,8 +111,9 @@ class Person {
         armAngle = 0.76;
       }
     }
-    if (drown && stir && !isBurning && drown2 && (tempMouseY >=height/2+200) && (tempMouseY <=height/2+300)&& (tempMouseX >= (width/2-50)) && (tempMouseX<= (width/2+50))) {  //if the person is over the fire and all other steps have been done, let boolean feel become true.
-      feel = true;
-    }
+    
+   // if (drown && stir && !isBurning && drown2 && (tempMouseY >=height/2+200) && (tempMouseY <=height/2+300)&& (tempMouseX >= (width/2-50)) && (tempMouseX<= (width/2+50))) {  //if the person is over the fire and all other steps have been done, let boolean feel become true.
+   //   feel = true;
+   // }
   }
 }
