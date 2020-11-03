@@ -11,7 +11,12 @@ class Interface {
   //Variables for position
   float xPositionFixed;
   float yPositionFixed;
-
+  
+  //set booleans
+ boolean stir;
+ boolean drown2;
+ boolean feel;
+ 
   Interface(float initXPositionFixed, float initYPositionFixed) {
     xPositionFixed =  initXPositionFixed;
     yPositionFixed = initYPositionFixed;
@@ -19,6 +24,9 @@ class Interface {
 
   void load() {
     leaves = loadShape("leaves.svg");
+  }
+    void check(){
+    fireplace.check(bucket.bucketX, bucket.bucketY, fireplace.drown);
   }
 
   void display() {
@@ -28,29 +36,29 @@ class Interface {
     fill(255);
     textSize(28);
     text("Complete the steps to put out your campfire", 10, 60);
-    if (drown) {
+    if (fireplace.drown) {
       fill(35, 220, 0);
     }
     text("step 1: drown your fire", 10, 100);
-    if (drown && stir) {
+    if (fireplace.drown && stir) {
       fill(57, 225, 20);
     } else {
       fill(255);
     }
     text("step 2: stir your fire", 10, 130);
-    if (drown && stir && drown2) {
+    if (fireplace.drown && stir && drown2) {
       fill(57, 225, 20);
     } else {
       fill(255);
     }
     text("step 3: drown your fire again", 10, 160);
-    if (drown && stir && drown2 && feel) {
+    if (fireplace.drown && stir && drown2 && feel) {
       fill(57, 225, 20);
     } else {
       fill(255);
     }
     text("step 4: feel if your fire is still hot", 10, 190);
-    if (drown && stir && drown2 && feel) {
+    if (fireplace.drown && stir && drown2 && feel) {
       textSize(60);
       fill(80, 80, 80);
       String s = "Congratulations! You succesfully put out your fire!";  

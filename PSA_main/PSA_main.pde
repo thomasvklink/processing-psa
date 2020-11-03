@@ -25,7 +25,7 @@ Interface gui;
 //boolean isBurning;
 //boolean overbucket;
 //boolean overshovel;
-boolean drown;
+//boolean drown;
 boolean stir;
 boolean drown2;
 boolean feel;
@@ -54,7 +54,7 @@ void setup() {
 
   //Set booleans for logic
   //isBurning=true;
-  drown = false;
+  //drown = false;
   stir = false;
   drown2 = false;
   feel = false;
@@ -67,7 +67,7 @@ void draw() {
   shovel.display();
   bucket.display();
   gui.display();
-  
+  gui.check();
 }
 
 void mouseDragged() {
