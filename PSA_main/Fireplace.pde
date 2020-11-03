@@ -1,7 +1,7 @@
 /*
  This is a class Fireplace used to create the Fireplace that is seen on the screen most of the interactions happen with this Fireplace.
  It is also used to call the class Fire.
- */
+*/
 
 class Fireplace {
   //PShapes for SVG images to draw the fireplace and wooden logs
@@ -46,7 +46,7 @@ class Fireplace {
 
     //create the Fire particles
     for (int i = 0; i < flames.length; i ++ ) {
-      flames[i] = new Fire(random(xPosition-40, xPosition+40), yPosition-20, random(1, 3), random(1, 2.5), isBurning);
+      flames[i] = new Fire(random(xPosition-40, xPosition+40), yPosition-20, random(1, 3), random(1, 2.5), isBurning, xPosition);
     }
   }
 

@@ -2,7 +2,7 @@
  This is a class Water used to create the river that is behind the land.
  This class also calls the class Flow to create the streams in the river.
  This makes the river look like it is flowing.
- */
+*/
 
 Flow[] streams = new Flow[20];
 

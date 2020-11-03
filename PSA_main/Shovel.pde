@@ -1,7 +1,7 @@
 /*
   This is a class Shovel used to create the shovel that is moveable by dragging.
  This shovel is needed for the 2nd step of the process of putting out your campfire correctly.
- */
+*/
 
 class Shovel {
 

@@ -10,7 +10,7 @@
  Which is in association with Smokey the largest wildfire prevention service in the US. 
  The program was designed to raise awareness in how to properly put out your campfire. 
  The program has multiple steps which will have to be done in the correct order to correctly put out you fire.
- */
+*/
 
 
 //Reference classes
@@ -56,7 +56,6 @@ void mousePressed() {
   shovel.hover(mouseX, mouseY, bucket.overbucket);
 }
 void mouseDragged() {
-
   bucket.drag(mouseX, mouseY);
   bucket.filled(fireplace.xPosition, fireplace.yPosition, background.water.xPositionFixed, background.water.yPositionFixed);
   shovel.drag(mouseX, mouseY);

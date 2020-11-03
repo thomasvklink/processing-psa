@@ -1,7 +1,8 @@
 /*
   This is a class bucket to create the bucket which will be filled with water.
  this bucket is necessary for step 1 and 3 of the process of putting out your campfire.
- */
+*/
+
 class Bucket {
 
 
