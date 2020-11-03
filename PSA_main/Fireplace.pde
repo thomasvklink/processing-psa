@@ -1,7 +1,7 @@
 /*
   This is a class Fireplace used to create the Fireplace that is seen on the screen most of the interactions happen with this Fireplace.\
-  It is also used to call the class Fire.
-*/
+ It is also used to call the class Fire.
+ */
 
 class Fireplace {
   //PShapes for SVG images to draw the fireplace and wooden logs
@@ -14,17 +14,21 @@ class Fireplace {
   float yPosition;
   float bucketX;
   float bucketY;
+  float shovelX;
+  float shovelY;
   float timer;
   boolean isBurning;
   boolean drown;
+  boolean stir;
 
   Fireplace(float initXPosition, float initYPosition) {
     xPosition = initXPosition;
     yPosition = initYPosition;
-   
-   //set booleans for logic
+
+    //set booleans for logic
     isBurning=true;
     drown = false;
+    stir = false;
   }
 
   void load() {
@@ -59,15 +63,23 @@ class Fireplace {
       }
     }
   }
-  
-  void check(float tempBucketX, float tempBucketY, boolean initDrown){
+
+  void check(float tempBucketX, float tempBucketY, boolean initDrown, boolean initBucketFill, float tempShovelX, float tempShovelY, boolean initStir) {
     bucketX = tempBucketX;
     bucketY = tempBucketY;
     drown = initDrown;
+    bucket.bucketfill = initBucketFill;
+    shovelX = tempShovelX;
+    shovelY = tempShovelY;
+    stir = initStir;
 
-    if ((tempBucketY >=yPosition-100) && (tempBucketY <=yPosition)&&(tempBucketX >= (xPosition-50)) && (tempBucketX<= (xPosition+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
-        isBurning = false;  //fire goes out
-        drown = true;   //step drown completed
-      }
+
+    if (!initBucketFill && (tempBucketY >=yPosition-100) && (tempBucketY <=yPosition)&&(tempBucketX >= (xPosition-50)) && (tempBucketX<= (xPosition+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
+      isBurning = false;  //fire goes out
+      drown = true;   //step drown completed
+    }
+    if (!isBurning && drown && (tempShovelY >=yPosition+35) && (tempShovelY <=yPosition+300)&&(tempShovelX >= (xPosition-50)) && (tempShovelX<= (xPosition+50))) {  //if the fire is not burning anymore and the shovel is over the fire let stir become true
+      stir = true;
   }
+}
 }

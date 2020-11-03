@@ -58,7 +58,6 @@ class Bucket {
   
   void hover(int tempMouseY, int tempMouseX){
     
-    println(tempMouseY, tempMouseX,bucketX, bucketY, overbucket);
     if ((tempMouseX <= bucketX+50) && (tempMouseX >= bucketX-50) && (tempMouseY <=bucketY+5) && (tempMouseY >= bucketY-20)) { //if the mouse is over the bucket let the boolean overbucket be true 
       overbucket = true; 
     } else {  //if the mouse is not over the bucket let the boolean overbucket be false 
@@ -75,13 +74,12 @@ class Bucket {
     waterY = tempWaterY;
     
     //if the bucket is over the river let it fill up
-    if ((bucketY >= waterY+100) && (bucketY<=waterY+300)) {
-      bucketfill = true;
+    if ((bucketY >= waterY+100) && (bucketY<=waterY+300)) { //if the bucket is over the river let the boolean bucketfill become true
+      bucketfill = true;  //bucket is filled
     }
     
     if ((bucketY >=fireY-100) && (bucketY <=fireY)&&(bucketX >= (fireX-50)) && (bucketX<= (fireX+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
       bucketfill = false;  //bucket is emptied
-      //drown = true;   //step drown completed
     }
   }
 }

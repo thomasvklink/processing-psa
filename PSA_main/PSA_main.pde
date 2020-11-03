@@ -81,10 +81,11 @@ void mouseDragged() {
     
  // }
   //if the mouse is over the shovel and not over the bucket let the shovel get dragged.
-  //if (!overbucket && overshovel) {
+  if (!bucket.overbucket && overshovel) {
     shovel.drag(mouseX, mouseY);
-//  }
+ }
   //if the mouse is over the man and not over the bucket or the shovel let the man move while dragging.
- // if (!overbucket && !overshovel) {
+  //if (!bucket.overbucket && !shovel.overshovel) {
   man.update(mouseY, mouseX);
+//}
 }
