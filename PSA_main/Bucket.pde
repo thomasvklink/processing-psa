@@ -1,12 +1,14 @@
-/* this is a class bucket to create the bucket which will be filled with water.
- this bucket is necessary for step 1 and 3 of the process of putting out your campfire.
- */
+/*
+  This is a class bucket to create the bucket which will be filled with water.
+  this bucket is necessary for step 1 and 3 of the process of putting out your campfire.
+*/
 class Bucket {
 
 
   //Variables for position and boolean bucketfill
   float bucketX;
   float bucketY;
+  boolean overbucket;
   float fireplaceXPosition;
   float fireplaceYPosition;
   float riverXPosition;
@@ -66,5 +68,14 @@ class Bucket {
     if (drown && stir && !isBurning && (initYPositionFixed >=fireY-100) && (initYPositionFixed <=fireY) && (initXPositionFixed >= (fireX-50)) && (initXPositionFixed<= (fireX+50))) {  //if the bucket is over the fireplace and drown and stir are true and isBurning is false let boolean drown 2 become true.
       drown2 = true;  //step drown2 completed
     }
+  }
+  
+  void filled(){
+    //if the bucket is over the river let it fill up
+    if ((bucketY >= height/2+100) && (bucketY<=height/2+300)) {
+        bucketfill = true;
+      }
+      
+     
   }
 }

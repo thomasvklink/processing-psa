@@ -59,4 +59,8 @@ class Interface {
       text(s, (width/2), (height/2-200), 500, 300);  //text wraps itself within set box
     }
   }
+  
+  void check(){
+    
+  }
 }
