@@ -16,11 +16,15 @@ class Fireplace {
   float bucketY;
   float timer;
   boolean isBurning;
+  boolean drown;
 
   Fireplace(float initXPosition, float initYPosition) {
     xPosition = initXPosition;
     yPosition = initYPosition;
-    
+   
+   //set booleans for logic
+    isBurning=true;
+    drown = false;
   }
 
   void load() {
@@ -56,11 +60,12 @@ class Fireplace {
     }
   }
   
-  void check(float tempBucketX, float tempBucketY){
+  void check(float tempBucketX, float tempBucketY, boolean initDrown){
     bucketX = tempBucketX;
     bucketY = tempBucketY;
-    
-    if ((bucketY >=yPosition-100) && (bucketY <=yPosition)&&(bucketX >= (xPosition-50)) && (bucketX<= (xPosition+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
+    drown = initDrown;
+
+    if ((tempBucketY >=yPosition-100) && (tempBucketY <=yPosition)&&(tempBucketX >= (xPosition-50)) && (tempBucketX<= (xPosition+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
         isBurning = false;  //fire goes out
         drown = true;   //step drown completed
       }
