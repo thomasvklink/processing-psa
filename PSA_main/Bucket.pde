@@ -56,7 +56,7 @@ class Bucket {
    // }
   }
   
-  void hover(int tempMouseY, int tempMouseX){
+  void hover(int tempMouseX, int tempMouseY){
     
     if ((tempMouseX <= bucketX+50) && (tempMouseX >= bucketX-50) && (tempMouseY <=bucketY+5) && (tempMouseY >= bucketY-20)) { //if the mouse is over the bucket let the boolean overbucket be true 
       overbucket = true; 

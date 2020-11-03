@@ -24,7 +24,7 @@ Interface gui;
 //create booleans
 //boolean isBurning;
 //boolean overbucket;
-boolean overshovel;
+//boolean overshovel;
 //boolean drown;
 boolean stir;
 boolean drown2;
@@ -72,20 +72,12 @@ void draw() {
 
 void mouseDragged() {
   
-  bucket.hover(mouseY,mouseX);
+  bucket.hover(mouseX,mouseY);
   bucket.drag(mouseX, mouseY);
-  bucket.filled(fireplace.xPosition, fireplace.yPosition, background.water.xPositionFixed, background.water.yPositionFixed);
-  
-  //if the mouse is over the bucket while dragging let it get dragged.
- // if (overbucket) {
-    
- // }
-  //if the mouse is over the shovel and not over the bucket let the shovel get dragged.
-  if (!bucket.overbucket && overshovel) {
-    shovel.drag(mouseX, mouseY);
- }
-  //if the mouse is over the man and not over the bucket or the shovel let the man move while dragging.
-  //if (!bucket.overbucket && !shovel.overshovel) {
+  bucket.filled(fireplace.xPosition, fireplace.xPosition, background.water.xPositionFixed, background.water.yPositionFixed);
+  shovel.hover(mouseX,mouseY);
+  shovel.drag(mouseX, mouseY);
   man.update(mouseY, mouseX);
-//}
+  man.limited();
+  fireplace.check(bucket.bucketX, bucket.bucketY);
 }
