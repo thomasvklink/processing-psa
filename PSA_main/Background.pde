@@ -14,6 +14,7 @@ class Background {
   Land land; 
   Fireplace fireplace;
 
+
   Background(float initXPosition, float initYPosition) {
     xPosition = initXPosition;
     yPosition = initYPosition;
@@ -23,6 +24,7 @@ class Background {
     water = new Water(width/2, height/2);
     land = new Land(width/2, height/2);
     fireplace = new Fireplace(width/2, height/2+300);
+
 
     //Loading images
     trees.load();
@@ -35,7 +37,6 @@ class Background {
     sky.display();
     trees.display();
     water.display(); 
-
     land.display();
     fireplace.display();
   }

@@ -38,9 +38,9 @@ void setup() {
   rectMode(CENTER);
 
   //Creating objects
+  background = new Background(width/2, height/2);
   bucket = new Bucket(width/2-700, height/2+400);
   shovel = new Shovel((width/2+370), (height/2+100));
-  background = new Background(width/2, height/2);
   gui = new Interface(width/2, height/2);
   man = new Person(width/2-450, height/2+450);
 
@@ -67,14 +67,14 @@ void draw() {
 void mouseDragged() {
   //if the mouse is over the bucket while dragging let it get dragged.
   if (overbucket) {
-    bucket.drag(mouseX, mouseY);
+    bucket.drag(mouseX, mouseY, width/2, height/2+300, width/2, height/2);
   }
   //if the mouse is over the shovel and not over the bucket let the shovel get dragged.
   if (!overbucket && overshovel) {
     shovel.drag(mouseX, mouseY);
   }
-//if the mouse is over the man and not over the bucket or the shovel let the man move while dragging.
+  //if the mouse is over the man and not over the bucket or the shovel let the man move while dragging.
   if (!overbucket && !overshovel) {
-  man.update(mouseY, mouseX);
-}
+    man.update(mouseY, mouseX);
+  }
 }

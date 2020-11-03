@@ -1,11 +1,16 @@
 /* this is a class bucket to create the bucket which will be filled with water.
-  this bucket is necessary for step 1 and 3 of the process of putting out your campfire.
-*/
+ this bucket is necessary for step 1 and 3 of the process of putting out your campfire.
+ */
 class Bucket {
+
 
   //Variables for position and boolean bucketfill
   float bucketX;
   float bucketY;
+  float fireplaceXPosition;
+  float fireplaceYPosition;
+  float riverXPosition;
+  float riverYPosition;
   boolean bucketfill;
 
 
@@ -41,20 +46,24 @@ class Bucket {
     ellipse(bucketX, bucketY-20, 40, 25);
   }
 
-  void drag(float initXPositionFixed, float initYPositionFixed) {
+  void drag(float initXPositionFixed, float initYPositionFixed, float fireX, float fireY, float waterX, float waterY) {
     bucketX = initXPositionFixed;
     bucketY = initYPositionFixed;
+    fireplaceXPosition=fireX;
+    fireplaceYPosition=fireY;
+    riverXPosition = waterX;
+    riverYPosition = waterY;
 
     //if the bucket is over the river let it fill up
-    if ((initYPositionFixed >= height/2+100) && (initYPositionFixed<=height/2+300)) {
+    if ((initYPositionFixed >= waterY+100) && (initYPositionFixed<=waterY+300)) {
       bucketfill = true;
     }
-    if ((initYPositionFixed >=height/2+200) && (initYPositionFixed <=height/2+300)&&(initXPositionFixed >= (width/2-50)) && (initXPositionFixed<= (width/2+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
+    if ((initYPositionFixed >=fireY-100) && (initYPositionFixed <=fireY)&&(initXPositionFixed >= (fireX-50)) && (initXPositionFixed<= (fireX+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
       bucketfill = false;  //bucket is emptied
       isBurning = false;  //fire goes out
       drown = true;   //step drown completed
     }
-    if (drown && stir && !isBurning && (initYPositionFixed >=height/2+200) && (initXPositionFixed >= (width/2-50)) && (initXPositionFixed<= (width/2+50))) {  //if the bucket is over the fireplace and drown and stir are true and isBurning is false let boolean drown 2 become true.
+    if (drown && stir && !isBurning && (initYPositionFixed >=fireY-100) && (initYPositionFixed <=fireY) && (initXPositionFixed >= (fireX-50)) && (initXPositionFixed<= (fireX+50))) {  //if the bucket is over the fireplace and drown and stir are true and isBurning is false let boolean drown 2 become true.
       drown2 = true;  //step drown2 completed
     }
   }
