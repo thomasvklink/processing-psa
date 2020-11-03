@@ -99,21 +99,25 @@ class Person {
       heightAdjust = tempMouseY/8.5; // Make adjustment to the height of the limbs in relation to the y position of the mouse
       widthAdjust = tempMouseY/20;  // Make adjustment to the x position of the limbs in relation to the y position of the mouse
       armAngle = atan2(tempMouseY-yPosition, tempMouseX-xPosition) + radians(20);
-
-      if (angle > 28) { //Limit crouching animation after set point (angle of 25 deg)
+    }
+    
+   
+   // if (drown && stir && !isBurning && drown2 && (tempMouseY >=height/2+200) && (tempMouseY <=height/2+300)&& (tempMouseX >= (width/2-50)) && (tempMouseX<= (width/2+50))) {  //if the person is over the fire and all other steps have been done, let boolean feel become true.
+   //   feel = true;
+   // }
+  }
+  
+  void limited(){
+    
+    if (angle > 28) { //Limit crouching animation after set point (angle of 25 deg)
         angle = 28;
         angle2 = -28;
         heightAdjust = 80;
         widthAdjust = 34;
       }
 
-      if (armAngle > 0.76) { //Limit movement of the arm
+    if (armAngle > 0.76) { //Limit movement of the arm
         armAngle = 0.76;
       }
-    }
-    
-   // if (drown && stir && !isBurning && drown2 && (tempMouseY >=height/2+200) && (tempMouseY <=height/2+300)&& (tempMouseX >= (width/2-50)) && (tempMouseX<= (width/2+50))) {  //if the person is over the fire and all other steps have been done, let boolean feel become true.
-   //   feel = true;
-   // }
   }
 }
