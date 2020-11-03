@@ -21,16 +21,6 @@ Fireplace fireplace;
 Person man;
 Interface gui;
 
-//create booleans
-//boolean isBurning;
-//boolean overbucket;
-//boolean overshovel;
-//boolean drown;
-boolean stir;
-boolean drown2;
-boolean feel;
-
-
 void setup() {
   //Sketch settings
   fullScreen();
@@ -50,14 +40,6 @@ void setup() {
   fireplace.load();
   man.load();
   gui.load();
-  
-
-  //Set booleans for logic
-  //isBurning=true;
-  //drown = false;
- // stir = false;
- // drown2 = false;
- // feel = false;
 }
 
 void draw() {
@@ -69,13 +51,14 @@ void draw() {
   gui.display();
   gui.check();
 }
-
+void mousePressed() {
+  bucket.hover(mouseX, mouseY, shovel.overshovel);
+  shovel.hover(mouseX, mouseY, bucket.overbucket);
+}
 void mouseDragged() {
-  
-  bucket.hover(mouseX,mouseY);
+
   bucket.drag(mouseX, mouseY);
   bucket.filled(fireplace.xPosition, fireplace.yPosition, background.water.xPositionFixed, background.water.yPositionFixed);
-  shovel.hover(mouseX,mouseY, bucket.overbucket);
   shovel.drag(mouseX, mouseY);
   man.update(mouseY, mouseX, bucket.overbucket, shovel.overshovel);
   man.limited();

@@ -1,6 +1,6 @@
 /*
   This is a class Fire used to create fire particles that move upwards from the logs (see class fireplace).
-*/
+ */
 class Fire {
 
   float xPosition;

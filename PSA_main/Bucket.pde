@@ -18,7 +18,7 @@ class Bucket {
   Bucket(float initXPosition, float initYPosition) {
     bucketX = initXPosition;
     bucketY = initYPosition;
-    
+
     //set booleans for logic
     bucketfill = false;
     overbucket = false;
@@ -41,39 +41,36 @@ class Bucket {
     }
     //inside of the bucket
     ellipse(bucketX, bucketY-20, 40, 25);
-    
   }
 
   void drag(float tempMouseX, float tempMouseY) {
-    if (overbucket){
-    bucketX = tempMouseX;
-    bucketY = tempMouseY;
-   }
-
+    if (overbucket) {
+      bucketX = tempMouseX;
+      bucketY = tempMouseY;
+    }
   }
-  
-  void hover(int tempMouseX, int tempMouseY){
-    
-    if ((tempMouseX <= bucketX+50) && (tempMouseX >= bucketX-50) && (tempMouseY <=bucketY+5) && (tempMouseY >= bucketY-20)) { //if the mouse is over the bucket let the boolean overbucket be true 
-      overbucket = true; 
+
+  void hover(int tempMouseX, int tempMouseY, boolean initOverShovel) {
+
+    if ((tempMouseX <= bucketX+50) && (tempMouseX >= bucketX-50) && (tempMouseY <=bucketY+5) && (tempMouseY >= bucketY-20) && !initOverShovel) { //if the mouse is over the bucket let the boolean overbucket be true 
+      overbucket = true;
     } else {  //if the mouse is not over the bucket let the boolean overbucket be false 
-      overbucket = false; 
-    } 
-    
+      overbucket = false;
+    }
   } 
 
   void filled(float tempFireplaceX, float tempFireplaceY, float tempWaterX, float tempWaterY) {
-    
+
     fireX = tempFireplaceX;
     fireY = tempFireplaceY;
     waterX = tempWaterX;
     waterY = tempWaterY;
-    
+
     //if the bucket is over the river let it fill up
     if ((bucketY >= waterY+100) && (bucketY<=waterY+300)) { //if the bucket is over the river let the boolean bucketfill become true
       bucketfill = true;  //bucket is filled
     }
-    
+
     if ((bucketY >=fireY-100) && (bucketY <=fireY)&&(bucketX >= (fireX-50)) && (bucketX<= (fireX+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
       bucketfill = false;  //bucket is emptied
     }

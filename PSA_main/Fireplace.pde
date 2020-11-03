@@ -33,6 +33,8 @@ class Fireplace {
     isBurning=true;
     drown = false;
     stir = false;
+    drown2 = false;
+    feel = false;
   }
 
   void load() {
@@ -54,15 +56,15 @@ class Fireplace {
     fill(121, 101, 97);
     ellipse(xPosition, yPosition, 300, 100);
     shape(fireplace, xPosition, yPosition, width, height);
-    
-    if (isBurning){
+
+    if (isBurning) {
       shape(logs, xPosition, yPosition-50, width, height); //State 1 of fire, regular wood colors when burning
-    } else if(!stir) {
+    } else if (!stir) {
       shape(logs2, xPosition, yPosition-50, width, height); //State 2 of fire, slighter grey colors after fire is out.
     } else {
       shape(logs3, xPosition, yPosition-50, width, height); //State 3 of fire, collapsed fire and darker colors.
     }
-    
+
     //update the timer
     if (!isBurning) {
       timer++;
@@ -77,31 +79,23 @@ class Fireplace {
     }
   }
 
-  void check(float tempBucketX, float tempBucketY, boolean initDrown, boolean initBucketFill, float tempShovelX, float tempShovelY, boolean initStir, float tempMouseX, float tempMouseY, boolean initOverBucket) {
-   // bucketX = tempBucketX;
-    //bucketY = tempBucketY;
-   // drown = initDrown;
-   // bucket.bucketfill = initBucketFill;
-   // shovelX = tempShovelX;
-   // shovelY = tempShovelY;
-    stir = initStir;
-      println(stir);
+  void check(float tempBucketX, float tempBucketY, boolean initBucketFill, float tempShovelX, float tempShovelY, float tempMouseX, float tempMouseY, boolean initOverBucket, boolean initOverShovel) {
 
     if (!initBucketFill && (tempBucketY >=yPosition-100) && (tempBucketY <=yPosition)&&(tempBucketX >= (xPosition-50)) && (tempBucketX<= (xPosition+50))) {  //if the bucket is over the fire let the boolean bucketfill become false
       isBurning = false;  //fire goes out
       drown = true;   //step drown completed
     }
-    
+
     if (!isBurning && drown && (tempShovelY >=yPosition-300) && (tempShovelY <=yPosition+35)&&(tempShovelX >= (xPosition-50)) && (tempShovelX<= (xPosition+50))) {  //if the fire is not burning anymore and the shovel is over the fire let stir become true
-      stir = true;
+      stir = true;  //step stir completed
     }
-    
+
     if (drown && stir && !isBurning && (tempBucketY >=yPosition-100) && (tempBucketY <=yPosition) && (tempBucketX >= (xPosition-50)) && (tempBucketX<= (xPosition+50))) {  //if the bucket is over the fireplace and drown and stir are true and isBurning is false let boolean drown 2 become true.
       drown2 = true;  //step drown2 completed
     }
-    
-    if (drown && stir && !isBurning && drown2 && !initOverBucket && (tempMouseY >=yPosition-100) && (tempMouseY <=yPosition+300)&& (tempMouseX >= (xPosition-50)) && (tempMouseX<= xPosition+50)) {  //if the person is over the fire and all other steps have been done, let boolean feel become true.
-     feel = true;
+
+    if (drown && stir && !isBurning && drown2 && !initOverBucket && !initOverShovel && (tempMouseY >=yPosition-100) && (tempMouseY <=yPosition+300)&& (tempMouseX >= (xPosition-50)) && (tempMouseX<= xPosition+50)) {  //if the person is over the fire and all other steps have been done, let boolean feel become true.
+      feel = true;  //step feel completed
     }
   }
 }

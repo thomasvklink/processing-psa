@@ -1,7 +1,7 @@
 /*
   This is a class Interface used to create the front display of the interactive poster.
-  It shows text and some leaves on the foreground it helps to give the poster a more in depth view.
-*/
+ It shows text and some leaves on the foreground it helps to give the poster a more in depth view.
+ */
 
 class Interface {
 
@@ -12,15 +12,15 @@ class Interface {
   //Variables for position
   float xPositionFixed;
   float yPositionFixed;
-  
+
   float passMouseX;
   float passMouseY;
-  
+
   //set booleans
   boolean stir;
   boolean drown2;
   boolean feel;
- 
+
   Interface(float initXPositionFixed, float initYPositionFixed) {
     xPositionFixed =  initXPositionFixed;
     yPositionFixed = initYPositionFixed;
@@ -30,14 +30,14 @@ class Interface {
     leaves = loadShape("leaves.svg");
     ribbon = loadShape("ribbon.svg");
   }
-  
-  void input(float tempMouseX, float tempMouseY){
+
+  void input(float tempMouseX, float tempMouseY) {
     passMouseX = tempMouseX;
     passMouseY = tempMouseY;
   }
-    void check(){
+  void check() {
     //Since all interactions happen with the fireplace, these checkes are made withing a method in class Fireplace.
-    fireplace.check(bucket.bucketX, bucket.bucketY, fireplace.drown, bucket.bucketfill, shovel.shovelX, shovel.shovelY, fireplace.stir, passMouseX, passMouseY, bucket.overbucket);
+    fireplace.check(bucket.bucketX, bucket.bucketY, bucket.bucketfill, shovel.shovelX, shovel.shovelY, passMouseX, passMouseY, bucket.overbucket, shovel.overshovel);
   }
 
   void display() {
@@ -79,5 +79,4 @@ class Interface {
       text("You put out your fire in the correct way!", xPositionFixed-350, yPositionFixed+100);  //text wraps itself within set box
     }
   }
-  
 }

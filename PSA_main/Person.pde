@@ -1,7 +1,7 @@
 /*
   This is a class Person used to create the person that represents you which has made the campfire and needs to put it out correctly.
-  This person is made out of separate parts and will be used in the 4th and final step of putting out your campfire.
-*/
+ This person is made out of separate parts and will be used in the 4th and final step of putting out your campfire.
+ */
 
 class Person {
 
@@ -91,7 +91,7 @@ class Person {
   }
 
   void update(int tempMouseY, int tempMouseX, boolean initOverBucket, boolean initOverShovel) {
-    //When mouse is between set limits, update the angles of the joints in the legs, head and arm in relation to the height of the mouse.
+    //When mouse is between set limits, and the bucket or the shovel are not selected, update the angles of the joints in the legs, head and arm in relation to the height of the mouse.
     if (tempMouseX > xPosition && tempMouseX < xPosition + 600 && !initOverBucket && !initOverShovel) {
       angle = (tempMouseY/4)/6;
       angle2 = -angle; //The upper leg rotates in the opposite direction as the lower
@@ -101,18 +101,18 @@ class Person {
       armAngle = atan2(tempMouseY-yPosition, tempMouseX-xPosition) + radians(20);
     }
   }
-  
-  void limited(){
-    
+
+  void limited() {
+
     if (angle > 28) { //Limit crouching animation after set point (angle of 25 deg)
-        angle = 28;
-        angle2 = -28;
-        heightAdjust = 80;
-        widthAdjust = 34;
-      }
+      angle = 28;
+      angle2 = -28;
+      heightAdjust = 80;
+      widthAdjust = 34;
+    }
 
     if (armAngle > 0.76) { //Limit movement of the arm
-        armAngle = 0.76;
-      }
+      armAngle = 0.76;
+    }
   }
 }

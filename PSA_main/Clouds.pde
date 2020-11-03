@@ -1,6 +1,6 @@
 /*
   This is a class Clouds used to create clouds that move across the screen.
-*/
+ */
 class Clouds {
 
   //Variables for position

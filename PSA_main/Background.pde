@@ -1,7 +1,7 @@
 /*
   This is a class that calls other classes into one to form the background of the interactive poster.
-  it calls the following classes: Sky, Trees, Water, Flow, Land and Fireplace.
-*/
+ it calls the following classes: Sky, Trees, Water, Flow, Land and Fireplace.
+ */
 
 class Background {
 
@@ -29,7 +29,6 @@ class Background {
     trees.load();
     water.load();
     land.load();
-    
   }
 
   void display() {
