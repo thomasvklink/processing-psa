@@ -5,3 +5,4 @@ Based on the wildfire prevention campaign from the American Ad Council.
 
 Final project for "Programming for We Create Identity" course during module 1 of Creative Technology at the University of Twente.
 
+![alt text](https://github.com/thomasvklink/processing-psa/blob/main/PSA_main/Screenshot.png "Program screenshot")
