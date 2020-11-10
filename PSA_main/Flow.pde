@@ -1,3 +1,8 @@
+/*
+  This is a class Flow used to create small white rectangles (streams) that move from the left to the right.
+ This class makes the water look like it is a flowing river.
+*/
+
 class Flow {
 
   //Variables for position, size and speed

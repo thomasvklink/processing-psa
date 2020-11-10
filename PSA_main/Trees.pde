@@ -1,3 +1,7 @@
+/*
+  This is a class Trees used to create the Trees in the background.
+*/
+
 class Trees {
 
   PShape tree1;

@@ -1,3 +1,8 @@
+/*
+  This is a class Person used to create the person that represents you which has made the campfire and needs to put it out correctly.
+ This person is made out of separate parts and will be used in the 4th and final step of putting out your campfire.
+*/
+
 class Person {
 
   //PShapes for SVG images to make the body of the person
@@ -85,29 +90,29 @@ class Person {
     popMatrix();
   }
 
-  void update(int tempMouseY, int tempMouseX) {
-    //When mouse is between set limits, update the angles of the joints in the legs, head and arm in relation to the height of the mouse.
-    if (tempMouseX > xPosition && tempMouseX < xPosition + 600) {
+  void update(int tempMouseY, int tempMouseX, boolean initOverBucket, boolean initOverShovel) {
+    //When mouse is between set limits, and the bucket or the shovel are not selected, update the angles of the joints in the legs, head and arm in relation to the height of the mouse.
+    if (tempMouseX > xPosition && tempMouseX < xPosition + 600 && !initOverBucket && !initOverShovel) {
       angle = (tempMouseY/4)/6;
       angle2 = -angle; //The upper leg rotates in the opposite direction as the lower
       headAngle = angle*1.2; //Head rotates slightly faster then other joints
       heightAdjust = tempMouseY/8.5; // Make adjustment to the height of the limbs in relation to the y position of the mouse
       widthAdjust = tempMouseY/20;  // Make adjustment to the x position of the limbs in relation to the y position of the mouse
       armAngle = atan2(tempMouseY-yPosition, tempMouseX-xPosition) + radians(20);
-
-      if (angle > 28) { //Limit crouching animation after set point (angle of 25 deg)
-        angle = 28;
-        angle2 = -28;
-        heightAdjust = 80;
-        widthAdjust = 34;
-      }
-
-      if (armAngle > 0.76) { //Limit movement of the arm
-        armAngle = 0.76;
-      }
     }
-    if (drown && stir && !isBurning && drown2 && (tempMouseY >=height/2+200) && (tempMouseX >= (width/2-50)) && (tempMouseX<= (width/2+50))) {  //if the person is over the fire and all other steps have been done, let boolean feel become true.
-      feel = true;
+  }
+
+  void limited() {
+
+    if (angle > 28) { //Limit crouching animation after set point (angle of 25 deg)
+      angle = 28;
+      angle2 = -28;
+      heightAdjust = 80;
+      widthAdjust = 34;
+    }
+
+    if (armAngle > 0.76) { //Limit movement of the arm
+      armAngle = 0.76;
     }
   }
 }

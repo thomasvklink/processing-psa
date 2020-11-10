@@ -1,3 +1,8 @@
+/*
+  This is a class Sky used to create the sky background.
+ This class also calls the class Clouds.
+*/
+
 class Sky {
 
   //variables for positions
@@ -25,6 +30,5 @@ class Sky {
     //call methods out of class Clouds
     cloud.display();
     cloud.update();
-
   }
 }

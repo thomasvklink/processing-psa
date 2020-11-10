@@ -3,30 +3,23 @@
  P4WCI 2020
  Tristan van Marle, Thomas van Klink
  October 2020
- */
+ 
+ Program description:
+ This program shows an interactive poster on how to correctly put out your fire.
+ It was based on a public service announcement on how to prevent wildfires from BeOutdoorSafe.
+ Which is in association with Smokey the largest wildfire prevention service in the US. 
+ The program was designed to raise awareness in how to properly put out your campfire. 
+ The program has multiple steps which will have to be done in the correct order to correctly put out you fire.
+*/
+
 
 //Reference classes
-Sky sky;
-Trees trees;
-Water water;
-Flow[] streams = new Flow[20];
-Land land;
+Background background;
 Bucket bucket;
-Fireplace fireplace;
-Clouds cloud;
 Shovel shovel;
+Fireplace fireplace;
 Person man;
 Interface gui;
-
-//create booleans
-boolean isBurning;
-boolean overbucket;
-boolean overshovel;
-boolean drown;
-boolean stir;
-boolean drown2;
-boolean feel;
-
 
 void setup() {
   //Sketch settings
@@ -36,61 +29,37 @@ void setup() {
   rectMode(CENTER);
 
   //Creating objects
-  sky = new Sky(width/2, height/2);
-  trees = new Trees(width/2, height/2);
-  water = new Water(width/2, height/2);
-  for (int i = 0; i < streams.length; i ++ ) {
-    streams[i] = new Flow(random(0, width), random(height/2+100, height-height/4), random(20, 200), random(5, 8), random(0.1, 0.4));
-  }
-  land = new Land(width/2, height/2);
+  background = new Background(width/2, height/2);
+  fireplace = new Fireplace(width/2, height/2+300);
   bucket = new Bucket(width/2-700, height/2+400);
   shovel = new Shovel((width/2+370), (height/2+100));
-  fireplace = new Fireplace(width/2, height/2+300);
-  cloud = new Clouds(random(0, width), height/2);
   gui = new Interface(width/2, height/2);
   man = new Person(width/2-450, height/2+450);
 
   //Loading images
-  trees.load();
-  water.load();
-  land.load();
   fireplace.load();
   man.load();
   gui.load();
-
-  //Set booleans for logic
-  isBurning=true;
-  drown = false;
-  stir = false;
-  drown2 = false;
-  feel = false;
 }
 
 void draw() {
-  sky.display();
-  trees.display();
-  water.display(); 
-  for (int i = 0; i < streams.length; i++) { 
-    streams[i].display();
-    streams[i].update();
-  }
-  land.display();
+  background.display();
   fireplace.display();
   man.display();
   shovel.display();
   bucket.display();
   gui.display();
+  gui.check();
 }
-
+void mousePressed() {
+  bucket.hover(mouseX, mouseY, shovel.overshovel);
+  shovel.hover(mouseX, mouseY, bucket.overbucket);
+}
 void mouseDragged() {
-  //if the mouse is over the bucket while dragging let it get dragged.
-  if (overbucket) {
-    bucket.drag(mouseX, mouseY);
-  }
-  //if the mouse is over the shovel and not over the bucket let the shovel get dragged.
-  if (!overbucket && overshovel) {
-    shovel.drag(mouseX, mouseY);
-  }
-  
-  man.update(mouseY, mouseX);
+  bucket.drag(mouseX, mouseY);
+  bucket.filled(fireplace.xPosition, fireplace.yPosition, background.water.xPositionFixed, background.water.yPositionFixed);
+  shovel.drag(mouseX, mouseY);
+  man.update(mouseY, mouseX, bucket.overbucket, shovel.overshovel);
+  man.limited();
+  gui.input(mouseX, mouseY);
 }
